@@ -1,0 +1,21 @@
+# Archivos y directorios generados por Eclipse
+.classpath
+.project
+.settings/
+
+# Archivos y directorios generados por Maven
+target/
+/bin/
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de otros editores
+*.swp
+*.swo
+*~
+
+# BD Derby
+DBArqJDBC1/
+*.log
