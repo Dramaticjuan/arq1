@@ -3,10 +3,8 @@ import dao.DAOFactory;
 import dao.Interfaz.abstractDAO;
 import dao.Interfaz.punto3;
 import dao.Interfaz.punto4;
-import models.Cliente;
-import models.Factura;
-import models.FacturaProducto;
-import models.Producto;
+import models.*;
+import utils.DataGenerator;
 import utils.Pair;
 
 public class Main {
@@ -29,8 +27,8 @@ public class Main {
 		clienteDAO.createTable();
 		facturaDAO.createTable();
 		facturaproductoDAO.createTable();
-		*/
-		/*
+		
+		
 		DataGenerator.cargarDatos(clienteDAO, DataGenerator.CLIENTE);
 		DataGenerator.cargarDatos(productoDAO, DataGenerator.PRODUCTO);
 		DataGenerator.cargarDatos(facturaDAO, DataGenerator.FACTURA);

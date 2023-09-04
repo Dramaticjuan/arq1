@@ -7,6 +7,14 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	public static final String DERBY = "derby";
 	public static final String MYSQL = "mysql";
+	
+	private static final String DERBY_URI = "jdbc:derby:DBArqJDBC1;create=true";
+	private static final String DERBY_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+
+	private static final String MYSQL_URI = "jdbc:mysql://localhost:3307/arq_db_1";
+	private static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String MYSQL_USER = "root";
+	private static final String MYSQL_PASS = "root";
 
 	private static ConnectionFactory instance = new ConnectionFactory();
 	private Connection connection;
@@ -26,8 +34,8 @@ public class ConnectionFactory {
 		
 		if (type.equals(DERBY)) {
 			try {
-				Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-				this.connection = DriverManager.getConnection("jdbc:derby:DBArqJDBC1;create=true");
+				Class.forName(DERBY_DRIVER);
+				this.connection = DriverManager.getConnection(DERBY_URI);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -35,8 +43,8 @@ public class ConnectionFactory {
 		
 		if (type.equals(MYSQL)) {
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/arq_db_1", "root", "root");
+				Class.forName(MYSQL_DRIVER);
+				this.connection = DriverManager.getConnection(MYSQL_URI, MYSQL_USER, MYSQL_PASS);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

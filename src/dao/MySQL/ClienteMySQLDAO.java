@@ -97,10 +97,10 @@ public class ClienteMySQLDAO extends abstractDAO<Cliente, Integer> implements pu
 	private String getReadAllSortByMostBilledQuery() {
 		return "SELECT C.idCliente, C.nombre, C.email "
 				+ "FROM Cliente C "
-				+ "JOIN arq_db_1.Factura F on C.idCliente = F.idCliente "
-				+ "JOIN arq_db_1.FacturaProducto FP on F.idFactura = FP.idFactura "
-				+ "JOIN arq_db_1.Producto P on P.idProducto = FP.idProducto "
-				+ "GROUP BY F.idCliente "
+				+ "JOIN Factura F on C.idCliente = F.idCliente "
+				+ "JOIN FacturaProducto FP on F.idFactura = FP.idFactura "
+				+ "JOIN Producto P on P.idProducto = FP.idProducto "
+				+ "GROUP BY C.idCliente, C.nombre, C.email "
 				+ "order by SUM(cantidad* P.valor) desc;";
 	}
 	@Override

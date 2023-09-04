@@ -88,10 +88,10 @@ public class productoDerbyDAO extends abstractDAO<Producto, Integer> implements 
 	private String getHighestIncomeQuery() {
 		return "SELECT P.idProducto, P.nombre, P.valor "
 				+ "FROM FacturaProducto fp "
-				+ "JOIN arq_db_1.Producto P on P.idProducto = fp.idProducto "
-				+ "GROUP BY idProducto, P.valor "
+				+ "JOIN Producto P on P.idProducto = fp.idProducto "
+				+ "GROUP BY P.idProducto, P.nombre ,P.valor "
 				+ "ORDER BY (SUM(cantidad)* P.valor) DESC "
-				+ "LIMIT 1;";
+				+ "FETCH FIRST 1 ROWS ONLY ";
 	}
 
 	@Override
