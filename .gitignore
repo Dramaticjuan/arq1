@@ -16,6 +16,9 @@ Thumbs.db
 *.swo
 *~
 
-# BD Derby
+# DB Derby
 DBArqJDBC1/
 *.log
+
+# DB MYSQL
+mysql/

@@ -16,6 +16,18 @@
 			<artifactId>derby</artifactId>
 			<version>10.16.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

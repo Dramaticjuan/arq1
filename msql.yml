@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'arq_db_1'
+      MYSQL_USER: 'juan'
+      MYSQL_PASSWORD: 'juan'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3307:3306"
+    expose:
+      - "3307"
+    volumes:
+      - "./mysql:/var/lib/mysql"

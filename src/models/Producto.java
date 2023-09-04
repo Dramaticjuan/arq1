@@ -1,6 +1,6 @@
-package dao;
+package models;
 
-public class Producto {
+public class Producto{
 	int id;
 	String nombre;
 	float valor;
@@ -22,6 +22,9 @@ public class Producto {
 	public float getValor() {
 		return valor;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", nombre=" + nombre + ", valor=" + valor + "]";
+	}
 }

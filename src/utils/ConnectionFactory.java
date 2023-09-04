@@ -36,7 +36,7 @@ public class ConnectionFactory {
 		if (type.equals(MYSQL)) {
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBArqJDBC1", "root", "Nelson30");
+				this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/arq_db_1", "root", "root");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
